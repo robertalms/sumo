@@ -1,3 +1,12 @@
+# log only DCIA using default threshold with custom perception/reaction time
+onlyDCIA_prt
+
+# log only DCIA using increased threshold - expected outcome: no written maxDCIA because threshold is higher than default
+onlyDCIA_threshold
+
+# log only DCIA using default threshold.
+onlyDCIA
+
 # Given parameters comma-separated
 commaSeparated
 
