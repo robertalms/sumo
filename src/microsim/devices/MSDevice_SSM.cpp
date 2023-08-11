@@ -1620,10 +1620,23 @@ MSDevice_SSM::computeDCIA(double gap, double followerSpeed, double leaderSpeed, 
         return INVALID_DOUBLE;    // collision!
     }
     double dv = followerSpeed - leaderSpeed;
+    followerAccel = -4.5;
     if (dv <= 0.) {
         return 0.0;    // no need to brake
     }
-
+	
+//	if (leaderSpeed == 0.){
+//		leaderAccel = 0.;
+//	}
+//	if (followerSpeed == 0.){
+//		followerAccel = 0.;
+//	}
+	
+//	if ((leaderSpeed - leaderAccel*prt - followerSpeed + followerAccel*prt) == 0){
+//		return INVALID_DOUBLE;
+//	}
+	
+	
     double T = (followerSpeed*prt - leaderSpeed*prt - 2*gap) / (leaderSpeed - leaderAccel*prt - followerSpeed + followerAccel*prt);
     if (T == prt)
     {
